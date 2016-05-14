@@ -14,4 +14,4 @@ var Button = React.createClass({
   }
 });
 
-ReactDOM.render( < Button / > , document.getElementById('root'));
+ReactDOM.render( <Button /> , document.getElementById('root'));
