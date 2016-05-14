@@ -10,11 +10,7 @@ var Button = React.createClass({
     });
   },
   render: function() {
-    return ( < button onClick = {
-      this.onClickHandler
-    } > Go {
-      this.state.counter
-    } < /button>)
+     return ( <button onClick={this.onClickHandler}> Go {this.state.counter} </button> )
   }
 });
 
