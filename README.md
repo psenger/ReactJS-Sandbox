@@ -10,7 +10,7 @@ Notes:
 ---
 
 * Componets - have
-  * properties ( this.props ) - can not be changed
+  * properties ( this.props ) - can not be changed ( immutable )
   * state ( this.state ) - state can be changed ( react repaints the dom )
 * React has a virtual dom that it monitors for changes and updates the dom.
 * JSX is parsed by React and can have HTML embeded.
