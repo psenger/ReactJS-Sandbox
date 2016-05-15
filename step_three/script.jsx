@@ -23,15 +23,21 @@ var Card = React.createClass({
 
 var Form = React.createClass({
   localOnSubmitHandler:function(e){
-    e.preventDefault();
-    var loginInput = React.findDOMMode(this.refs.login);
+    e.preventDefault(); 
+    // React also supports using a string (instead of a callback) as a ref prop on any component, although this approach is mostly legacy at this point.
+    var loginInput = ReactDOM.findDOMNode(this.refs.login); 
     // now we can read/write to the elem
     // add care here
     this.props.addCard(loginInput.value);
     loginInput.value = '';
   },
   render:function(){
-    return (<form obSubmit={this.localOnSubmitHandler}><input placeholder='enter the github login id' /><button>add</button></form>);
+    return (
+      <form onSubmit={this.localOnSubmitHandler}>
+        <input placeholder='enter the github login id' ref='login'/>
+        <button>add</button>
+      </form>
+    );
   }
 });
 
@@ -40,8 +46,7 @@ var Main = React.createClass({
     // return { logins: [ 'psenger','dmoralestech','akumar15' ] };
     return { logins: [] };
   },
-  addCard: function( loginToAdd ){
-    console.log('>>', loginToAdd );
+  addCard: function( loginToAdd ){ 
     this.setState({
       logins: this.state.logins.concat(loginToAdd)
     });
