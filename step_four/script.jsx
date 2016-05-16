@@ -117,6 +117,10 @@ var Game = React.createClass({
     var correct = (this.state.numberOfStars === this.sumOfSelectedNumbers() );
     this.setState( { correct: correct } );
   },
+  acceptAnswer: function(){
+    // usedNumbers...
+    
+  },
   render:function(){
     var selectedNumbers = this.state.selectedNumbers,
         numberOfStars = this.state.numberOfStars,
